@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="iBlog — a simple home for stories, ideas, and articles.">
+  <title>iBlog — The heaven for bloggers</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header" id="home">
+    <nav class="navbar container" aria-label="Main navigation">
+      <a class="brand" href="#home" aria-label="iBlog home">
+        <span class="brand-mark" aria-hidden="true">✎</span><span>iBlog</span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links" id="navLinks">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </div>
+      <form class="search-form" id="searchForm" role="search">
+        <label class="sr-only" for="searchInput">Search articles</label>
+        <input id="searchInput" type="search" placeholder="Article Search" autocomplete="off">
+        <button type="submit">Search</button>
+        <button type="button" class="clear-search" id="clearSearch" aria-label="Clear search" hidden>×</button>
+      </form>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero container" aria-labelledby="heroTitle">
+      <div class="hero-copy">
+        <span class="eyebrow">IDEAS. STORIES. PEOPLE.</span>
+        <h1 id="heroTitle">The heaven for bloggers</h1>
+        <p class="hero-intro">iBlog is a website where you can share your stories and ideas. Submit an article, get it approved, and reach readers who care about what you have to say.</p>
+        <p class="hero-extra">From everyday moments to big ideas, there is always a story worth telling. Explore the latest articles or start writing your own.</p>
+        <a class="primary-link" href="#featured">Explore articles <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="hero-art">
+        <!-- IMAGE SLOT: replace assets/images/hero.jpg with your own banner image -->
+        <img src="assets/images/images.jpg" alt="Creative workspace illustration" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
+        <div class="image-placeholder hero-placeholder" aria-hidden="true"><span>YOUR HERO IMAGE</span><small>assets/images/hero.jpg</small></div>
+        <div class="hero-orbit" aria-hidden="true"></div>
+      </div>
+      <div class="hero-spark spark-one" aria-hidden="true">✦</div>
+      <div class="hero-spark spark-two" aria-hidden="true">✦</div>
+    </section>
+
+    <section class="featured-section container" id="featured">
+      <div class="section-heading">
+        <div><span class="eyebrow">HAND-PICKED FOR YOU</span><h2>Featured Articles</h2></div>
+        <p>Fresh perspectives, one story at a time.</p>
+      </div>
+      <div class="content-layout">
+        <div class="article-list" id="articleList" aria-live="polite">
+          <!-- Articles are rendered by script.js. Add/edit article objects there. -->
+        </div>
+        <aside class="sidebar">
+          <div class="sidebar-card">
+            <h3>Browse by year</h3>
+            <p class="sidebar-note">Find a story from a particular year.</p>
+            <label class="year-option"><input type="radio" name="year" value="all" checked> <span>All years</span></label>
+            <label class="year-option"><input type="radio" name="year" value="2021"> <span>2021</span></label>
+            <label class="year-option"><input type="radio" name="year" value="2020"> <span>2020</span></label>
+            <button class="text-button" id="resetFilters" type="button">Reset filters ↗</button>
+          </div>
+          <div class="sidebar-promo">
+            <span class="promo-icon">✍</span>
+            <h3>Have a story to tell?</h3>
+            <p>Your words might be exactly what someone needs to read today.</p>
+            <a href="#contact">Get in touch <span aria-hidden="true">→</span></a>
+          </div>
+        </aside>
+      </div>
+      <p class="results-message" id="resultsMessage" hidden></p>
+    </section>
+
+    <section class="about-section container" id="about">
+      <div class="about-icon" aria-hidden="true">iB</div>
+      <div>
+        <span class="eyebrow">A LITTLE ABOUT US</span>
+        <h2>A place for every point of view.</h2>
+        <p>iBlog brings curious minds together through thoughtful articles, personal stories, and useful ideas. This demo is ready for your own content — update the article data and replace the image slots with your images.</p>
+      </div>
+    </section>
+
+    <section class="contact-section container" id="contact">
+      <div>
+        <span class="eyebrow">LET'S TALK</span>
+        <h2>Have a question or an article idea?</h2>
+        <p>Send a message using the form. This front-end demo validates the fields locally; connect it to a backend or form service to receive submissions.</p>
+      </div>
+      <form class="contact-form" id="contactForm">
+        <label for="contactName">Your name</label>
+        <input id="contactName" name="name" type="text" placeholder="Enter your name" required>
+        <label for="contactEmail">Email address</label>
+        <input id="contactEmail" name="email" type="email" placeholder="you@example.com" required>
+        <label for="contactMessage">Message</label>
+        <textarea id="contactMessage" name="message" rows="4" placeholder="Tell us what you have in mind..." required></textarea>
+        <button class="submit-button" type="submit">Validate message <span aria-hidden="true">→</span></button>
+        <p id="contactFeedback" class="form-feedback" role="status"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="footer-brand" href="#home">iBlog</a>
+    <p>© <span id="currentYear"></span> iBlog. Built for stories worth sharing.</p>
+    <a href="#home" class="back-top">Back to top ↑</a>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

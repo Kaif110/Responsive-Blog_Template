@@ -1,0 +1,1 @@
+Place hero.jpg and article-1.jpg through article-5.jpg in this folder. See README.md.
